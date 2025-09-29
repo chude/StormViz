@@ -163,7 +163,7 @@ with map_col:
         
     
     if st.session_state.map_type == 'WeatherData':
-        current_map_url = Path(__file__).parent/'static/WeatherData.html'
+        current_map_url = str(Path(__file__).parent) + '/static/WeatherData.html'
         print(current_map_url)
     else:
         metric = st.session_state.map_type   
@@ -172,7 +172,7 @@ with map_col:
             current_map_url =  current_map_url + st.session_state.neighborhood + "_"
             metric = 'ExpectedStormOutages' # we don't really have anything dynamic so just plot the outages version
 
-        current_map_url = Path(__file__).parent/'static/' + current_map_url + st.session_state.layer_choice + "_" + metric + ".html"    
+        current_map_url = str(Path(__file__).parent) + 'static/' + current_map_url + st.session_state.layer_choice + "_" + metric + ".html"    
     
     ### Create the map
     print(current_map_url)
