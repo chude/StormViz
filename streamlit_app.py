@@ -178,7 +178,6 @@ with map_col:
     print(current_map_url)
     with open(current_map_url, 'r') as f:
         html_file = f.read()
-    print(html_file)
     components.html(html_file, height = "calc(100vh-80px);", width= "100%")
     #st.markdown(f'<iframe class="map-iframe-col" src="{current_map_url}" title="Interactive Map"></iframe>', unsafe_allow_html=True)
 
